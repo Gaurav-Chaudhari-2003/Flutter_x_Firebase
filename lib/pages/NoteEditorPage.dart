@@ -278,6 +278,7 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
                   ),
                 ),
                 const SizedBox(height: 16.0),
+                ElevatedButton(onPressed: _saveNote, child: const Text('Submit')),
                 // Character count display
                 Text(
                   'Total characters: $_characterCount',
