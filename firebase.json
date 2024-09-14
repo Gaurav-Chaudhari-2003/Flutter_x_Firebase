@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "hospitalmanagement-ssgmce",
+          "appId": "1:872102038610:android:80ee7eaf910a18a91d238b",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "hospitalmanagement-ssgmce",
+          "configurations": {
+            "android": "1:872102038610:android:80ee7eaf910a18a91d238b",
+            "ios": "1:872102038610:ios:27eef1845f4174561d238b",
+            "macos": "1:872102038610:ios:27eef1845f4174561d238b",
+            "web": "1:872102038610:web:3242cbc8996a5dbf1d238b",
+            "windows": "1:872102038610:web:484c02d4dcb75e7d1d238b"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
