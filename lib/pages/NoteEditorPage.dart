@@ -21,6 +21,7 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
   final List<String> _history = [];
   int _historyIndex = -1;
   bool _showIcons = false;
+  bool _hasUnsavedChanges = false;
   final FocusNode _focusNode = FocusNode();
   String? _timestampText;
   int _characterCount = 0;
@@ -45,18 +46,25 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
       _timestampText = DateFormat.yMMMd().add_jm().format(DateTime.now());
     }
 
-    // Add listener to detect focus changes
-    _focusNode.addListener(() {
-      setState(() {
-        _showIcons = _focusNode.hasFocus;
-      });
-    });
-
-    // Update character count when text changes
+    // Update flag when text changes
     textController.addListener(() {
       setState(() {
         _characterCount = textController.text.length;
+        _hasUnsavedChanges = true; // Mark as having unsaved changes
+        _showIcons = _hasUnsavedChanges; // Show icons if there are unsaved changes
       });
+    });
+
+    titleController.addListener(() {
+      setState(() {
+        _hasUnsavedChanges = true; // Mark as having unsaved changes
+        _showIcons = _hasUnsavedChanges; // Show icons if there are unsaved changes
+      });
+    });
+
+    // Add listener to detect focus changes
+    _focusNode.addListener(() {
+      // Remove focus change handling for icons
     });
   }
 
@@ -98,6 +106,7 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
       setState(() {
         _historyIndex--;
         textController.text = _history[_historyIndex];
+        _hasUnsavedChanges = true; // Mark as having unsaved changes
       });
     }
   }
@@ -107,6 +116,7 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
       setState(() {
         _historyIndex++;
         textController.text = _history[_historyIndex];
+        _hasUnsavedChanges = true; // Mark as having unsaved changes
       });
     }
   }
@@ -165,6 +175,10 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
       } else {
         await firestoreService.updateNote(widget.docID!, title, note);
       }
+      setState(() {
+        _hasUnsavedChanges = false; // No unsaved changes after saving
+        _showIcons = false; // Hide icons after saving
+      });
       Navigator.of(context).pop(true); // Close page after save
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -212,15 +226,24 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
             if (_showIcons) ...[
               IconButton(
                 icon: const Icon(Icons.undo),
-                onPressed: _undo,
+                onPressed: () {
+                  print("Undo pressed"); // Debug statement
+                  _undo();
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.redo),
-                onPressed: _redo,
+                onPressed: () {
+                  print("Redo pressed"); // Debug statement
+                  _redo();
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.check),
-                onPressed: _saveNote,
+                onPressed: () {
+                  print("Save pressed"); // Debug statement
+                  _saveNote();
+                },
               ),
             ],
           ],
@@ -237,7 +260,6 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
                 // Title TextField
                 TextField(
                   controller: titleController,
-                  focusNode: _focusNode, // Attach focus node
                   decoration: const InputDecoration(
                     hintText: "Title",
                     border: InputBorder.none,
@@ -278,7 +300,6 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                ElevatedButton(onPressed: _saveNote, child: const Text('Submit')),
                 // Character count display
                 Text(
                   'Total characters: $_characterCount',
