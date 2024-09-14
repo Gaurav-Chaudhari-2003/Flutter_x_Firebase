@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor:
           isDarkMode ? Colors.black : Colors.white.withOpacity(0.1),
       title: Text(
-        "NOTES",
+        "N O T E S",
         style: TextStyle(color: isDarkMode ? Colors.white : Colors.black),
       ),
       elevation: 0,
