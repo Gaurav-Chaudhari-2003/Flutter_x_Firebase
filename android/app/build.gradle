@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace "com.gauravchaudhari.flutterxfirebase.flutter_x_firebase"
+    namespace "com.gauravchaudhari.yournotes"
     compileSdkVersion 34  // Explicitly set
     ndkVersion flutter.ndkVersion
 
