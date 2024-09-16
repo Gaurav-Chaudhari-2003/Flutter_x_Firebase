@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_x_firebase/components/MyDrawer.dart';
-import 'package:flutter_x_firebase/services/FirestoreService.dart';
+import 'package:flutter_x_firebase/components/my_drawer.dart';
+import 'package:flutter_x_firebase/services/firestore_services.dart';
 import 'package:provider/provider.dart';
-import '../../themes/ThemeProvider.dart';
-import '../NoteEditorPage.dart';
+import '../../themes/theme_provider.dart';
+import '../edit_note_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

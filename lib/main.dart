@@ -2,13 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_x_firebase/services/firebase_options.dart';
 import 'package:flutter_x_firebase/pages/DrawerPages/home_page.dart';
-import 'package:flutter_x_firebase/pages/DrawerPages/ProfilePage.dart';
-import 'package:flutter_x_firebase/pages/DrawerPages/UsersPage.dart';
-import 'package:flutter_x_firebase/pages/authentication/AuthPage.dart';
-import 'package:flutter_x_firebase/pages/authentication/LoginOrRegister.dart';
-import 'package:flutter_x_firebase/themes/DarkMode.dart';
-import 'package:flutter_x_firebase/themes/LightMode.dart';
-import 'package:flutter_x_firebase/themes/ThemeProvider.dart';
+import 'package:flutter_x_firebase/pages/DrawerPages/profile_page.dart';
+import 'package:flutter_x_firebase/pages/DrawerPages/users_page.dart';
+import 'package:flutter_x_firebase/pages/authentication/auth_page.dart';
+import 'package:flutter_x_firebase/pages/authentication/login_or_register.dart';
+import 'package:flutter_x_firebase/themes/dark_mode.dart';
+import 'package:flutter_x_firebase/themes/light_mode.dart';
+import 'package:flutter_x_firebase/themes/theme_provider.dart';
 import 'package:provider/provider.dart'; // Import provider package
 
 void main() async {

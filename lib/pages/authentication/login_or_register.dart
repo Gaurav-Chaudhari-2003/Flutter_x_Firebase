@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_x_firebase/pages/authentication/LoginPage.dart';
-import 'package:flutter_x_firebase/pages/authentication/RegisterPage.dart';
+import 'package:flutter_x_firebase/pages/authentication/login_page.dart';
+import 'package:flutter_x_firebase/pages/authentication/register_page.dart';
 
 class LoginOrRegister extends StatefulWidget {
   const LoginOrRegister({super.key});

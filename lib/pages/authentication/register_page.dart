@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_x_firebase/components/MyButton.dart';
-import 'package:flutter_x_firebase/pages/authentication/LoginPage.dart';
-import 'package:flutter_x_firebase/components/MyTextField.dart';
+import 'package:flutter_x_firebase/components/my_button.dart';
+import 'package:flutter_x_firebase/pages/authentication/login_page.dart';
+import 'package:flutter_x_firebase/components/my_text_field.dart';
 
-import '../../helper/HelperPage.dart';
+import '../../helper/helper_page.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;

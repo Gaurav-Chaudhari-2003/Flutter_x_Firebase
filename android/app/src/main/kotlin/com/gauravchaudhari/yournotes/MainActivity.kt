@@ -1,4 +1,4 @@
-package com.gauravchaudhari.flutterxfirebase.flutter_x_firebase
+package com.gauravchaudhari.yournotes
 
 import io.flutter.embedding.android.FlutterActivity
 

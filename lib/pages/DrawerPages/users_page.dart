@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_x_firebase/components/MyBackButton.dart';
-import 'package:flutter_x_firebase/components/MyListTile.dart';
+import 'package:flutter_x_firebase/components/my_back_button.dart';
+import 'package:flutter_x_firebase/components/my_list_tile.dart';
 
 class UsersPage extends StatelessWidget {
   const UsersPage({super.key});

@@ -25,13 +25,14 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.gauravchaudhari.flutterxfirebase.flutter_x_firebase"
+        applicationId "com.gauravchaudhari.yournotes"
         minSdkVersion 23  // Explicitly set
         targetSdkVersion 34  // Explicitly set
         versionCode project.hasProperty('flutterVersionCode') ? project.flutterVersionCode.toInteger() : 1
         versionName project.hasProperty('flutterVersionName') ? project.flutterVersionName : "1.0"
         multiDexEnabled true
     }
+
 
     buildTypes {
         release {

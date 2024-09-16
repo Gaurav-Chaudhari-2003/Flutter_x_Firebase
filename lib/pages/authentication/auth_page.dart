@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_x_firebase/pages/authentication/LoginOrRegister.dart';
-import 'package:flutter_x_firebase/pages/authentication/LoginPage.dart';
+import 'package:flutter_x_firebase/pages/authentication/login_or_register.dart';
+import 'package:flutter_x_firebase/pages/authentication/login_page.dart';
 
 import '../DrawerPages/home_page.dart';
 

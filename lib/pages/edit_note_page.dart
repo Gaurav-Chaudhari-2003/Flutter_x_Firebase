@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_x_firebase/services/FirestoreService.dart';
+import 'package:flutter_x_firebase/services/firestore_services.dart';
 import 'package:intl/intl.dart'; // For date formatting
 
 class NoteEditorPage extends StatefulWidget {

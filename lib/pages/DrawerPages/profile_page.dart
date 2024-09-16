@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_x_firebase/components/MyBackButton.dart';
+import 'package:flutter_x_firebase/components/my_back_button.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
